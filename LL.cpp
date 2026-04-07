@@ -1,34 +1,38 @@
-#include "LL.h"
-
-LL::LL()
-    : head(nullptr), size(0)
-{
+#include <iostream>
+#include"NODE.h"
+#include"LL.h"
+using namespace std;
+LL::LL(){
+       hol=NULL;
+       size=0;
 }
 
-LL::~LL()
-{
-    NODE* current = head;
-    while (current != nullptr) {
-        NODE* next = current->move_next();
-        delete current;
-        current = next;
-    }
+LL::~LL(){
+          NODE* t=hol ; 
+     int i;
+     for(i=0;i<size;i++)
+     {
+          t=t->move_next();
+          delete hol;
+          hol=t;
+     }
+          //clear all nodes
 }
 
-void LL::show_all() const
-{
-    NODE* current = head;
-    while (current != nullptr) {
-        current->show_node();
-        current = current->move_next();
-    }
-}
+void LL::show_all(){
+      NODE* t=hol;
+     int i;
+     for(i=0;i<size;i++){
 
-void LL::add_node(NODE* node)
-{
-    if (head != nullptr) {
-        head->insert(node);
-    }
-    head = node;
-    ++size;
+          t->show_node();
+          t=t->move_next();
+     }
 }
+void LL::add_node(NODE *&A){
+
+          hol->insert(A);
+          hol=A;
+
+       size++;
+
+ }

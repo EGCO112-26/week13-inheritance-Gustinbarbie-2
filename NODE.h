@@ -1,18 +1,16 @@
+
 #ifndef NODE_H
 #define NODE_H
 
-class NODE {
-private:
-    int id;
-    NODE* next;
-
+class NODE{
+      int id;
+      NODE* next;
 public:
-    NODE(int id = 1);
-    virtual ~NODE();
-
-    virtual void show_node() const;
-    void insert(NODE* node);
-    NODE* move_next() const;
-};
+        NODE(int id=001);
+        void show_node();
+        void insert(NODE*&);
+        NODE* move_next();
+        ~NODE();
+      };
 
 #endif

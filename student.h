@@ -1,37 +1,31 @@
-#ifndef STUDENT_H
-#define STUDENT_H
-
-#include <iostream>
-#include <string>
-
 #include "MU_Person.h"
 
-class student : public MU_person {
+
+class student:public MU_person{
 private:
-    double gpa;
-
+          double gpa; 
+	
 public:
-    student(long id = 1, double g = 1.0, const std::string& name = "Nattawut");
+    student(long=001 ,double=1.0,string="Nattawut");
     ~student();
-
-    void display();
+    void display(); // display_person
+   
 };
 
-student::student(long id, double g, const std::string& n)
-    : MU_person(id, n), gpa(g)
-{
-    std::cout << "MU student constructor  " << gpa << std::endl;
+student::student(long id, double g,string n):MU_person(id,n){
+// Finish constructor to set all values
+
+    gpa=g;        
+    cout<<"MU student constructor  "<<gpa<<endl;
+         
+}
+student::~student(){
+     cout<<"-------"<<endl;
+     cout<<"student destructor  "<<gpa<<endl; 
 }
 
-student::~student()
-{
-    std::cout << "-------" << std::endl;
-    std::cout << "student destructor  " << gpa << std::endl;
-}
 
-void student::display()
-{
-    std::cout << "GPA: " << gpa << std::endl;
+void student::display(){
+   cout<<"GPA: "<<gpa<<endl;
+ 
 }
-
-#endif

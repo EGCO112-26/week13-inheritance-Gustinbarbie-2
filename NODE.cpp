@@ -1,29 +1,22 @@
-#include "NODE.h"
-
 #include <iostream>
+using namespace std;
+#include"NODE.h"
 
-NODE::NODE(int x)
-    : id(x), next(nullptr)
-{
-    std::cout << "adding " << x << std::endl;
+NODE::NODE(int x){
+      id=x;
+      next=NULL;
+      cout<<"adding "<< x<<endl;
 }
+  NODE:: ~NODE(){
+      cout<<"Node "<<id<<" is being deleted"<<endl;
+}
+NODE* NODE::move_next(){
+      return next;
+}
+void  NODE:: show_node(){
+         cout<<"Node data:"<<id<<endl;
+ }
+void NODE::insert(NODE*& x){
+     x->next=this;
 
-NODE::~NODE()
-{
-    std::cout << "Node " << id << " is being deleted" << std::endl;
-}
-
-NODE* NODE::move_next() const
-{
-    return next;
-}
-
-void NODE::show_node() const
-{
-    std::cout << "Node data:" << id << std::endl;
-}
-
-void NODE::insert(NODE* node)
-{
-    node->next = this;
-}
+     }
