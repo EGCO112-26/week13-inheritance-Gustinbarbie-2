@@ -1,4 +1,4 @@
-class Thai_person{
+/*class Thai_person{
 	private: 
 		long nat_id;
 	public: 
